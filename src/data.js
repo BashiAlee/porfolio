@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Abdul Basit',
-  title: 'Senior Full-Stack Developer',
+  title: 'Full Stack JavaScript Engineer',
   tagline: 'MEAN / MERN / MEVN specialist and team lead. 10+ years building web and mobile products for startups and enterprise.',
   email: 'abasitz1994@hotmail.com',
   phone: '+92 311 1898970',
@@ -36,7 +36,7 @@ export const experience = [
   {
     role: 'Senior Frontend Developer',
     company: 'Eclevar',
-    period: 'Nov 2024 – Present',
+    period: 'Nov 2024 – Jun 2026',
     points: [
       'Architect clean, high-performance code while continuously growing software design skills.',
       'Orchestrate the development lifecycle to build secure, fast and scalable solutions.',
