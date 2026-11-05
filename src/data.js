@@ -83,7 +83,6 @@ export const experience = [
   { role: 'JavaScript Developer', company: 'Expanse.Tech', period: 'Mar 2018 – Apr 2019', points: ['Built apps with Angular 6, VueJS, Electron, JavaScript, LESS/SCSS and HighCharts.', 'Developed hybrid mobile apps with the Ionic framework.'], stack: ['Angular 6', 'Vue', 'Electron', 'Ionic', 'HighCharts'] },
   { role: 'AngularJS Developer', company: 'Barefoot&Co', period: 'May 2017 – Mar 2018', points: ['Worked on Angular 1, 2 and 5 applications and Ionic hybrid apps.', 'Used Node.js, Bootstrap 4 and Trello.'], stack: ['Angular', 'Ionic', 'Node.js', 'Bootstrap 4'] },
   { role: 'Junior Web Developer', company: 'Brain Logix Private Limited', period: 'Sep 2016 – Mar 2017', points: ['Front-end development with Bootstrap, CSS3, HTML5, LESS, SASS and SCSS.', 'WordPress and Joomla theme customization, website maintenance and AngularJS.'], stack: ['HTML5', 'CSS3', 'SASS', 'WordPress', 'AngularJS'] },
-  { role: 'Teaching Assistant', company: 'Riphah International University', period: 'Feb 2016 – May 2016', points: ['Helped students during class activities, invigilated exams and answered semester-project queries.'] },
 ]
 
 export const skills = [
