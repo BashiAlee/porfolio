@@ -17,34 +17,64 @@ export const stats = [
   { value: '5+', label: 'Frameworks' },
 ]
 
+export const about = [
+  'Senior Full-Stack Developer with 10+ years building and maintaining scalable web and mobile applications across React.js, Angular, Vue.js and Ionic.',
+  'Deep experience in full-stack JavaScript (MERN/MEAN/MEVN), API development and integration, cross-platform mobile and cloud deployment on OpenShift.',
+  'Progressed from trainee to Senior Frontend Developer, taking on lead roles: client communication, technical decisions and team ownership across travel, e-commerce, blockchain and SaaS.',
+  'Delivered end-to-end solutions for startups and enterprise clients, working in remote and cross-border teams.',
+]
+
+export const achievements = [
+  'Performance improvements: faster load times and smaller bundles',
+  'Mentored team members as a lead',
+  'Built a reusable component library and standardized front-end practices',
+]
+
 export const experience = [
   {
     role: 'Senior Frontend Developer',
     company: 'Eclevar',
     period: 'Nov 2024 – Present',
     points: [
-      'Architect clean, high-performance React code and a library of reusable components.',
-      'Set standardized front-end practices; turn designs into pixel-perfect implementations.',
-      'Work with product, UI/UX and dev teams on secure, fast, scalable solutions.',
+      'Architect clean, high-performance code while continuously growing software design skills.',
+      'Orchestrate the development lifecycle to build secure, fast and scalable solutions.',
+      'Work with product, UI/UX and dev teams to champion best practices.',
+      'Turn creative designs into pixel-perfect React implementations.',
+      'Ensure seamless experiences across all browsers and platforms.',
+      'Hunt down bugs and optimize performance for smooth interactions.',
+      'Engineer robust, testable, performance-oriented software.',
+      'Select architectural patterns for complex business challenges.',
+      'Create standardized front-end practices and a library of reusable components.',
     ],
+    stack: ['React', 'Component library', 'Performance'],
   },
   {
     role: 'Frontend Engineer',
     company: 'Moniepoint',
     period: 'Aug 2022 – Oct 2024',
     points: [
-      'Built scalable, modular fintech interfaces in Angular and React.',
-      'Collaborated with backend, design and product on responsive web apps; ran code reviews.',
+      'Developed and maintained scalable, reusable, modular user interfaces in Angular and React.',
+      'Collaborated with backend engineers, designers and product managers on responsive web applications.',
+      'Translated designs and wireframes into high-quality, efficient code.',
+      'Wrote clean, maintainable, well-documented code following best practices.',
+      'Debugged UI/UX issues across browsers and platforms.',
+      'Took part in code reviews to keep the codebase consistent and high quality.',
+      'Checked the technical feasibility of UI/UX designs and proposed improvements.',
+      'Kept up with emerging frontend technologies and practices.',
     ],
+    stack: ['Angular', 'React', 'Fintech'],
   },
   {
     role: 'MEAN Stack Developer',
-    company: 'Travel Resorts of America',
+    company: 'Travel Resorts of America, Inc',
     period: 'Jul 2019 – Sep 2024',
     points: [
-      'Designed and maintained React and Angular applications; built Node.js + MongoDB APIs.',
-      'Owned build and deployment on OpenShift and handled communication with US clients.',
+      'Designed and maintained React and Angular applications and websites.',
+      'Handled communication with clients abroad.',
+      'Created APIs in Node.js with MongoDB as the database.',
+      'Owned build creation and deployment on OpenShift.',
     ],
+    stack: ['Angular', 'React', 'Node.js', 'MongoDB', 'OpenShift'],
   },
   { role: 'Project Manager & Developer', company: 'QMESpotlight', period: 'Aug 2019 – Nov 2019' },
   { role: 'JavaScript Developer', company: 'Iplex', period: 'Apr 2019 – Jun 2019' },

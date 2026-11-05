@@ -92,3 +92,10 @@ h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); line-height: 1.08; letter-spacing:
 .loc { margin-top: 18px; color: var(--muted); display: flex; align-items: center; gap: 6px; font-size: .9rem; }
 footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 50px 20px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+
+.about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; }
+.about p { color: var(--muted); margin-bottom: 12px; }
+.wins { list-style: none; padding: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 12px; align-self: start; font-size: .93rem; }
+.wins li { display: flex; gap: 8px; } .wins svg { color: #34d399; flex: none; margin-top: 4px; }
+.job .tags { margin-top: 10px; }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; } }

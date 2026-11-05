@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, Download, ArrowUpRight, Briefcase, Code2, FolderGit2, MapPin } from 'lucide-react'
-import { profile, stats, experience, skills, projects } from './data'
+import { Mail, Phone, Download, ArrowUpRight, Briefcase, Code2, FolderGit2, MapPin, User, Check } from 'lucide-react'
+import { profile, stats, about, achievements, experience, skills, projects } from './data'
 import './index.css'
 
 const Github = (p) => (
@@ -72,6 +72,7 @@ export default function App() {
       <header className="nav">
         <a href="#top" className="logo">AB<span>.</span></a>
         <nav>
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
@@ -110,6 +111,15 @@ export default function App() {
           ))}
         </motion.div>
 
+        <Section id="about" icon={User} title="About">
+          <div className="about">
+            <motion.div {...fade}>{about.map((t) => <p key={t}>{t}</p>)}</motion.div>
+            <motion.ul className="wins" {...fade}>
+              {achievements.map((a) => <li key={a}><Check size={16} /> {a}</li>)}
+            </motion.ul>
+          </div>
+        </Section>
+
         <Section id="projects" icon={FolderGit2} title="Selected work">
           <div className="grid">
             {projects.map((p, i) => (
@@ -132,6 +142,7 @@ export default function App() {
                 <div>
                   <h3>{e.role} <span>· {e.company}</span></h3>
                   {e.points && <ul>{e.points.map((x) => <li key={x}>{x}</li>)}</ul>}
+                  {e.stack && <div className="tags">{e.stack.map((t) => <span key={t}>{t}</span>)}</div>}
                 </div>
               </motion.div>
             ))}
