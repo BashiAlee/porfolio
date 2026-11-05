@@ -174,7 +174,7 @@ export default function App() {
         </Section>
       </main>
 
-      <footer>© {new Date().getFullYear()} {profile.name}. Built with React.</footer>
+      <footer>© {new Date().getFullYear()} {profile.name}.</footer>
     </>
   )
 }
