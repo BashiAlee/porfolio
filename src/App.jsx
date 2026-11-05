@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, Download, ArrowUpRight, Briefcase, Code2, FolderGit2, MapPin, User, Check } from 'lucide-react'
-import { profile, stats, about, achievements, experience, skills, projects } from './data'
+import { profile, stats, about, achievements, extras, experience, skills, projects } from './data'
 import './index.css'
 
 const Github = (p) => (
@@ -158,7 +158,7 @@ export default function App() {
               </motion.div>
             ))}
           </div>
-          <p className="edu">BS Software Engineering · Riphah International University, Islamabad · Angular (Intermediate), HackerRank</p>
+          <div className="edu"><p>{extras.education}</p><p>Certifications: {extras.certifications}</p><p>Languages: {extras.languages}</p></div>
         </Section>
 
         <Section id="contact" icon={Mail} title="Let's work together">

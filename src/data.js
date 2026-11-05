@@ -7,7 +7,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/bashialee/',
   github: 'https://github.com/BashiAlee',
   cv: '/Abdul-Basit-CV.pdf',
-  location: 'Pakistan · Remote',
+  location: 'Rawalpindi, Punjab, Pakistan · Remote',
 }
 
 export const stats = [
@@ -18,8 +18,10 @@ export const stats = [
 ]
 
 export const about = [
-  'Senior Full-Stack Developer with 10+ years building and maintaining scalable web and mobile applications across React.js, Angular, Vue.js and Ionic.',
-  'Deep experience in full-stack JavaScript (MERN/MEAN/MEVN), API development and integration, cross-platform mobile and cloud deployment on OpenShift.',
+  'Dynamic, adaptable developer with a talent for learning new technologies quickly, building efficient, scalable web and mobile applications with modern languages, frameworks and tools.',
+  'Expertise in Angular, TypeScript, Node.js, Express.js, React, Redux, Vue and Ionic, on both frontend and backend; databases include MongoDB and MySQL.',
+  'Extensive experience with real-time communication using Socket.io, and with project management tools like Jira and Trello.',
+  'Full-stack JavaScript (MERN/MEAN/MEVN), API development, cross-platform mobile and cloud deployment on OpenShift.',
   'Progressed from trainee to Senior Frontend Developer, taking on lead roles: client communication, technical decisions and team ownership across travel, e-commerce, blockchain and SaaS.',
   'Delivered end-to-end solutions for startups and enterprise clients, working in remote and cross-border teams.',
 ]
@@ -76,18 +78,19 @@ export const experience = [
     ],
     stack: ['Angular', 'React', 'Node.js', 'MongoDB', 'OpenShift'],
   },
-  { role: 'Project Manager & Developer', company: 'QMESpotlight', period: 'Aug 2019 – Nov 2019' },
-  { role: 'JavaScript Developer', company: 'Iplex', period: 'Apr 2019 – Jun 2019' },
-  { role: 'JavaScript Developer', company: 'Expanse.tech', period: 'Mar 2018 – Apr 2019' },
-  { role: 'AngularJS Developer', company: 'Barefoot&Co', period: 'May 2017 – Mar 2018' },
-  { role: 'Web Developer', company: 'BrainLogix', period: 'Sep 2016 – Mar 2017' },
+  { role: 'Project Management & MeanStack Developer', company: 'QMESpotlight (United States)', period: 'Aug 2019 – Nov 2019' },
+  { role: 'JavaScript Developer', company: 'iPlex Pvt Ltd', period: 'Apr 2019 – Jun 2019', points: ['Development in React.js, Angular and JavaScript.', 'Technical tests and client communication.'], stack: ['React', 'Angular', 'JavaScript'] },
+  { role: 'JavaScript Developer', company: 'Expanse.Tech', period: 'Mar 2018 – Apr 2019', points: ['Built apps with Angular 6, VueJS, Electron, JavaScript, LESS/SCSS and HighCharts.', 'Developed hybrid mobile apps with the Ionic framework.'], stack: ['Angular 6', 'Vue', 'Electron', 'Ionic', 'HighCharts'] },
+  { role: 'AngularJS Developer', company: 'Barefoot&Co', period: 'May 2017 – Mar 2018', points: ['Worked on Angular 1, 2 and 5 applications and Ionic hybrid apps.', 'Used Node.js, Bootstrap 4 and Trello.'], stack: ['Angular', 'Ionic', 'Node.js', 'Bootstrap 4'] },
+  { role: 'Junior Web Developer', company: 'Brain Logix Private Limited', period: 'Sep 2016 – Mar 2017', points: ['Front-end development with Bootstrap, CSS3, HTML5, LESS, SASS and SCSS.', 'WordPress and Joomla theme customization, website maintenance and AngularJS.'], stack: ['HTML5', 'CSS3', 'SASS', 'WordPress', 'AngularJS'] },
+  { role: 'Teaching Assistant', company: 'Riphah International University', period: 'Feb 2016 – May 2016', points: ['Helped students during class activities, invigilated exams and answered semester-project queries.'] },
 ]
 
 export const skills = [
-  { group: 'Frontend', items: ['React.js', 'Angular', 'Vue.js', 'Svelte', 'Electron', 'JavaScript', 'jQuery'] },
+  { group: 'Frontend', items: ['React.js', 'Next.js', 'Redux', 'TypeScript', 'Angular', 'Vue.js', 'Svelte', 'Electron', 'JavaScript', 'jQuery'] },
   { group: 'Styling', items: ['Tailwind CSS', 'Bootstrap', 'SASS / LESS', 'CSS'] },
   { group: 'Mobile', items: ['Ionic', 'Hybrid apps', 'REST on mobile'] },
-  { group: 'Backend', items: ['Node.js', 'MongoDB', 'REST APIs', '.NET / C#', 'ASP.NET MVC'] },
+  { group: 'Backend', items: ['Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'MySQL', 'Python', 'REST APIs', '.NET / C#'] },
   { group: 'DevOps', items: ['Docker', 'Kubernetes', 'OpenShift', 'CI/CD', 'Git'] },
   { group: 'Tools', items: ['VS Code', 'Visual Studio', 'Jira', 'Trello', 'SourceTree'] },
 ]
@@ -155,3 +158,9 @@ export const projects = [
     tags: ['Web', 'CMS'],
   },
 ]
+
+export const extras = {
+  languages: 'English (native or bilingual) · Urdu (full professional)',
+  certifications: 'Angular (Intermediate) Certificate · Angular Basic · Shaping up with Angular.js · Git from Basics to Advanced',
+  education: 'BS Software Engineering · Riphah International University (2012 – 2016)',
+}

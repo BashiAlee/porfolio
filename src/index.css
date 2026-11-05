@@ -99,3 +99,4 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 50
 .wins li { display: flex; gap: 8px; } .wins svg { color: #34d399; flex: none; margin-top: 4px; }
 .job .tags { margin-top: 10px; }
 @media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+.edu p { margin-top: 6px; }
