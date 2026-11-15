@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, Download, ArrowUpRight, Briefcase, Code2, FolderGit2, MapPin, User, Check } from 'lucide-react'
-import { profile, stats, about, achievements, extras, experience, skills, projects } from './data'
+import { Mail, Phone, Download, ArrowUpRight, MapPin } from 'lucide-react'
+import { profile, stats, about, achievements, extras, experience, skills, current, earlier, marquee } from './data'
 import './index.css'
 
 const Github = (p) => (
@@ -15,18 +15,19 @@ const Linkedin = (p) => (
 )
 
 const fade = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-60px' },
-  transition: { duration: 0.5 },
+  transition: { duration: 0.55, ease: [0.2, 0.7, 0.2, 1] },
 }
 
-function Section({ id, icon: Icon, title, children }) {
+function Section({ id, num, title, children }) {
   return (
     <section id={id} className="section">
-      <motion.h2 {...fade}>
-        <Icon size={22} /> {title}
-      </motion.h2>
+      <motion.header className="sec-head" {...fade}>
+        <span className="mono">{num}</span>
+        <h2>{title}</h2>
+      </motion.header>
       {children}
     </section>
   )
@@ -43,7 +44,7 @@ function Media({ kind }) {
     )
   if (kind === 'stockbill')
     return (
-      <div className="media mock">
+      <div className="media mock" aria-hidden="true">
         <div className="mock-bar"><i /><i /><i /><img src="/media/stockbill-icon.png" alt="" /> Universal Billing</div>
         <div className="mock-body">
           <div className="mock-bars">
@@ -57,9 +58,20 @@ function Media({ kind }) {
     )
   if (kind === 'tracker')
     return (
-      <div className="media tracker">
-        {[['Ali Raza', 'Overdue', 'red'], ['Sana Khan', 'Due in 3 days', 'amber'], ['Usman T.', 'Paid', 'green']].map(([n, s, c]) => (
+      <div className="media tracker" aria-hidden="true">
+        {[['Customer A', 'Overdue', 'red'], ['Customer B', 'Due in 3 days', 'amber'], ['Customer C', 'Paid', 'green']].map(([n, s, c]) => (
           <div key={n} className="row"><span>{n}</span><em className={c}>{s}</em></div>
+        ))}
+      </div>
+    )
+  if (kind === 'studio')
+    return (
+      <div className="media studio" aria-hidden="true">
+        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((d, i) => (
+          <div key={d} className="day">
+            <small>{d}</small>
+            <span className={i === 2 ? 'clash' : ''} style={{ height: `${[46, 70, 58, 34, 64][i]}%` }} />
+          </div>
         ))}
       </div>
     )
@@ -70,40 +82,50 @@ export default function App() {
   return (
     <>
       <header className="nav">
-        <a href="#top" className="logo">AB<span>.</span></a>
+        <a href="#top" className="logo">abdul<b>basit</b></a>
         <nav>
+          <a href="#work">Work</a>
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact" className="nav-cta">Contact</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="eyebrow"><span className="dot" /> Available for senior &amp; lead roles</p>
+            <p className="mono status"><span className="dot" /> Available for senior &amp; lead roles · {profile.location}</p>
             <h1>
-              Hi, I&apos;m <span className="grad">{profile.name}</span>.<br />
-              {profile.title}.
+              {profile.name.split(' ')[0]}<br />
+              <em>{profile.name.split(' ')[1]}</em>
             </h1>
+            <p className="role">{profile.title}</p>
             <p className="lead">{profile.tagline}</p>
             <div className="cta">
               <a className="btn primary" href="#contact">Get in touch <ArrowUpRight size={16} /></a>
               <a className="btn" href={profile.cv} download><Download size={16} /> Download CV</a>
-            </div>
-            <div className="social">
-              <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
-              <a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={18} /></a>
+              <span className="social">
+                <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+                <a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={18} /></a>
+              </span>
             </div>
           </motion.div>
-          <motion.div className="avatar" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }}>
-            {/* Replace with a real photo: put /public/media/profile.jpg and swap this block for <img src="/media/profile.jpg" /> */}
-            <span>AB</span>
-          </motion.div>
+
+          <motion.aside className="now" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }}>
+            <p className="mono">Now building</p>
+            <ul>
+              {current.map((p) => (
+                <li key={p.title}><a href="#work"><span>{p.title}</span><small>{p.badge}</small></a></li>
+              ))}
+            </ul>
+          </motion.aside>
         </section>
+
+        <div className="marquee" aria-hidden="true">
+          <div>{[...marquee, ...marquee].map((t, i) => <span key={i}>{t}</span>)}</div>
+        </div>
 
         <motion.div className="stats" {...fade}>
           {stats.map((s) => (
@@ -111,67 +133,92 @@ export default function App() {
           ))}
         </motion.div>
 
-        <Section id="about" icon={User} title="About">
+        <Section id="work" num="01" title="Current work">
+          <div className="bento">
+            {current.map((p, i) => (
+              <motion.article key={p.title} className="card" {...fade} transition={{ ...fade.transition, delay: (i % 2) * 0.08 }}>
+                <Media kind={p.kind} />
+                <div className="card-body">
+                  <div className="card-top"><h3>{p.title}</h3><span className="badge">{p.badge}</span></div>
+                  <p>{p.blurb}</p>
+                  <ul>{p.points.map((x) => <li key={x}>{x}</li>)}</ul>
+                  <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <motion.h3 className="sub" {...fade}>Earlier work</motion.h3>
+          <div className="rows">
+            {earlier.map((p) => (
+              <motion.div key={p.title} className="rowline" {...fade}>
+                <span className="mono">{p.area}</span>
+                <strong>{p.title}</strong>
+                <p>{p.blurb}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="about" num="02" title="About">
           <div className="about">
-            <motion.div {...fade}>{about.map((t) => <p key={t}>{t}</p>)}</motion.div>
+            <motion.div {...fade}>{about.map((t, i) => <p key={t} className={i === 0 ? 'big' : ''}>{t}</p>)}</motion.div>
             <motion.ul className="wins" {...fade}>
-              {achievements.map((a) => <li key={a}><Check size={16} /> {a}</li>)}
+              <li className="mono">Highlights</li>
+              {achievements.map((a) => <li key={a}>{a}</li>)}
             </motion.ul>
           </div>
         </Section>
 
-        <Section id="projects" icon={FolderGit2} title="Selected work">
-          <div className="grid">
-            {projects.map((p, i) => (
-              <motion.article key={p.title} className={`card ${p.kind !== 'plain' ? 'featured' : ''}`} {...fade} transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}>
-                <Media kind={p.kind} />
-                <span className="badge">{p.badge}</span>
-                <h3>{p.title}</h3>
-                <p>{p.blurb}</p>
-                <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
-              </motion.article>
+        <Section id="experience" num="03" title="Experience">
+          <div className="jobs">
+            {experience.map((e, i) => (
+              <motion.details key={e.company + e.period} className="job" open={i === 0} {...fade}>
+                <summary>
+                  <span className="mono when">{e.period}</span>
+                  <span className="what"><strong>{e.role}</strong><em>{e.company}</em></span>
+                  {e.points && <span className="plus" aria-hidden="true" />}
+                </summary>
+                {e.points && (
+                  <div className="job-body">
+                    <ul>{e.points.map((x) => <li key={x}>{x}</li>)}</ul>
+                    {e.stack && <div className="tags">{e.stack.map((t) => <span key={t}>{t}</span>)}</div>}
+                  </div>
+                )}
+              </motion.details>
             ))}
           </div>
         </Section>
 
-        <Section id="experience" icon={Briefcase} title="Experience">
-          <div className="timeline">
-            {experience.map((e) => (
-              <motion.div key={e.company + e.period} className="job" {...fade}>
-                <div className="when">{e.period}</div>
-                <div>
-                  <h3>{e.role} <span>· {e.company}</span></h3>
-                  {e.points && <ul>{e.points.map((x) => <li key={x}>{x}</li>)}</ul>}
-                  {e.stack && <div className="tags">{e.stack.map((t) => <span key={t}>{t}</span>)}</div>}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="skills" icon={Code2} title="Skills">
+        <Section id="skills" num="04" title="Skills">
           <div className="skills">
             {skills.map((g) => (
               <motion.div key={g.group} className="skill" {...fade}>
-                <h4>{g.group}</h4>
+                <h4 className="mono">{g.group}</h4>
                 <div className="tags">{g.items.map((t) => <span key={t}>{t}</span>)}</div>
               </motion.div>
             ))}
           </div>
-          <div className="edu"><p>{extras.education}</p><p>Certifications: {extras.certifications}</p><p>Languages: {extras.languages}</p></div>
+          <dl className="edu">
+            <div><dt className="mono">Education</dt><dd>{extras.education}</dd></div>
+            <div><dt className="mono">Certifications</dt><dd>{extras.certifications}</dd></div>
+            <div><dt className="mono">Languages</dt><dd>{extras.languages}</dd></div>
+          </dl>
         </Section>
 
-        <Section id="contact" icon={Mail} title="Let's work together">
-          <motion.div className="contact" {...fade}>
-            <p>Have a product to build or a team to lead? I&apos;d love to hear about it.</p>
+        <section id="contact" className="contact">
+          <motion.div {...fade}>
+            <p className="mono">05 · Contact</p>
+            <h2>Let&apos;s build<br /><em>something good.</em></h2>
+            <a className="mail" href={`mailto:${profile.email}`}>{profile.email} <ArrowUpRight size={26} /></a>
             <div className="cta">
-              <a className="btn primary" href={`mailto:${profile.email}`}><Mail size={16} /> {profile.email}</a>
               <a className="btn" href={`tel:${profile.phone.replace(/\s/g, '')}`}><Phone size={16} /> {profile.phone}</a>
               <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
+              <a className="btn" href={profile.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
             </div>
             <p className="loc"><MapPin size={14} /> {profile.location}</p>
           </motion.div>
-        </Section>
+        </section>
       </main>
 
       <footer>© {new Date().getFullYear()} {profile.name}.</footer>

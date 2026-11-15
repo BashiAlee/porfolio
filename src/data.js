@@ -94,69 +94,56 @@ export const skills = [
   { group: 'Tools', items: ['VS Code', 'Visual Studio', 'Jira', 'Trello', 'SourceTree'] },
 ]
 
-// kind: 'phones' | 'stockbill' | 'tracker' | 'plain'
-export const projects = [
+// kind: 'phones' | 'stockbill' | 'tracker' | 'studio'
+export const current = [
   {
     title: 'Apex Mobile Store',
-    badge: 'Currently building',
+    badge: 'In progress',
     kind: 'phones',
     blurb:
-      'Headless e-commerce store for a phone shop: new, used and refurbished phones plus accessories. WooCommerce is the source of truth, Next.js 16 + TypeScript is the storefront.',
-    tags: ['Next.js', 'TypeScript', 'WordPress', 'WooCommerce', 'CSS Modules'],
+      'Headless online store for a phone shop. WooCommerce is the source of truth and a Next.js 16 + TypeScript storefront sits on top.',
+    points: ['123 real products live in the catalogue, with photos and product videos', 'Grouped accessories menu, search, guest checkout with Cash on Delivery', 'Checked at desktop, tablet and phone widths after every change'],
+    tags: ['Next.js 16', 'TypeScript', 'WooCommerce', 'WordPress', 'CSS Modules'],
   },
   {
     title: 'Universal Billing System',
-    badge: 'Desktop app',
+    badge: 'v1.0 · Windows',
     kind: 'stockbill',
     blurb:
-      'Offline Electron app for small shops: stock, QR/barcode labels, billing by scanning, IMEI tracking, returns, suppliers, day book, reports and backup. Each shop sets its own name and logo.',
+      'Offline desktop billing for small shops, shipped as a Windows installer. Each shop sets its own name and logo.',
+    points: ['Stock, QR and barcode labels, billing by scanner, IMEI tracking', 'Per-item discounts, returns, suppliers, day book and reports', 'PDF and CSV export, one-click backup and restore, licensing'],
     tags: ['Electron', 'React', 'TypeScript', 'SQLite', 'Vitest', 'Playwright'],
   },
   {
     title: 'Installment Tracker',
-    badge: 'Local tool',
+    badge: 'Active',
     kind: 'tracker',
     blurb:
-      'Tracks customers buying phones on installments: auto-generated schedules, partial payments, overdue dashboard and one-click WhatsApp reminders.',
-    tags: ['Node.js', 'Express', 'SQLite'],
+      'Tracks customers buying phones on installments: who owes what, when it is due and who is behind.',
+    points: ['Custom schedules, partial payments and a plan calculator', 'Owner and staff logins, cash ledger, PDF statements and overdue sheets', 'One-click WhatsApp reminders that you review before sending'],
+    tags: ['Node.js', 'Express', 'SQLite', 'PDFKit'],
   },
   {
-    title: 'Moniepoint',
-    badge: 'Fintech',
-    kind: 'plain',
-    blurb: 'Payments and banking interfaces for a fast-growing African fintech, built with Angular and React.',
-    tags: ['Angular', 'React', 'Fintech'],
-  },
-  {
-    title: 'Membership & Contract Management',
-    badge: 'SaaS',
-    kind: 'plain',
+    title: 'Studio Manager',
+    badge: 'New · v0.1',
+    kind: 'studio',
     blurb:
-      'Membership, contract, agent, lead assignment, upgrade and dues management for a travel-resorts business.',
-    tags: ['Angular', 'React', 'Node.js', 'MongoDB', 'OpenShift'],
-  },
-  {
-    title: 'Cliiimb & KOWO',
-    badge: 'Social',
-    kind: 'plain',
-    blurb: 'Social and community platforms, web and mobile, including Messenger with chat, audio calls, conference calls and location tracking.',
-    tags: ['Ionic', 'React', 'Realtime'],
-  },
-  {
-    title: 'Fashion E-commerce',
-    badge: 'Retail',
-    kind: 'plain',
-    blurb: 'Storefronts for Outfitters, Ethnic, Super Squad and Minnie Minors.',
-    tags: ['E-commerce', 'Responsive UI'],
-  },
-  {
-    title: 'IdeasPk · CERP · CarolineDiana',
-    badge: 'NGO & lifestyle',
-    kind: 'plain',
-    blurb: 'Research and non-profit sites plus a personal lifestyle brand site.',
-    tags: ['Web', 'CMS'],
+      'Desktop app for running a studio: sales, expenses, events, payments, shifts and equipment in one place.',
+    points: ['Alerts when bookings or equipment overlap', 'Portable Windows build, no install needed'],
+    tags: ['Electron', 'JavaScript'],
   },
 ]
+
+export const earlier = [
+  { title: 'Moniepoint', area: 'Fintech', blurb: 'Payments and banking interfaces built with Angular and React.' },
+  { title: 'Membership & Contract Management', area: 'SaaS', blurb: 'Membership, contracts, agents, lead assignment, upgrades and dues for a travel-resorts business.' },
+  { title: 'Cliiimb & KOWO', area: 'Social', blurb: 'Community platforms on web and mobile, plus a Messenger with chat, audio and conference calls and location tracking.' },
+  { title: 'Outfitters · Ethnic · Super Squad · Minnie Minors', area: 'Retail', blurb: 'Fashion e-commerce storefronts.' },
+  { title: 'IdeasPk · CERP · CarolineDiana', area: 'NGO & lifestyle', blurb: 'Research and non-profit sites and a personal lifestyle brand site.' },
+  { title: 'Medical Software', area: 'Healthcare', blurb: 'Healthcare and medical systems.' },
+]
+
+export const marquee = ['React', 'Next.js', 'TypeScript', 'Angular', 'Vue', 'Node.js', 'Electron', 'Ionic', 'MongoDB', 'SQLite', 'Socket.io', 'Docker', 'OpenShift']
 
 export const extras = {
   languages: 'English (native or bilingual) · Urdu (full professional)',
