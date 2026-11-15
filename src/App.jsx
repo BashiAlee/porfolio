@@ -33,49 +33,21 @@ function Section({ id, num, title, children }) {
   )
 }
 
+const shots = {
+  phones: ['/media/shot-apex.jpg', 'Apex Mobile Store homepage'],
+  stockbill: ['/media/shot-billing.jpg', 'Universal Billing System products and stock screen, with demo data'],
+  tracker: ['/media/shot-tracker.jpg', 'Installment Tracker dashboard, with demo data'],
+  studio: ['/media/shot-studio.jpg', 'Studio Manager dashboard, with demo data'],
+}
+
 function Media({ kind }) {
-  if (kind === 'phones')
-    return (
-      <div className="media phones">
-        <img src="/media/phone-1.jpg" alt="Phone listing from the Apex store" loading="lazy" />
-        <img src="/media/phone-2.jpg" alt="Phone listing from the Apex store" loading="lazy" />
-        <img src="/media/phone-3.jpg" alt="Phone listing from the Apex store" loading="lazy" />
-      </div>
-    )
-  if (kind === 'stockbill')
-    return (
-      <div className="media mock" aria-hidden="true">
-        <div className="mock-bar"><i /><i /><i /><img src="/media/stockbill-icon.png" alt="" /> Universal Billing</div>
-        <div className="mock-body">
-          <div className="mock-bars">
-            {[40, 65, 50, 85, 60, 95, 75].map((h, i) => (
-              <span key={i} style={{ height: `${h}%`, animationDelay: `${i * 0.1}s` }} />
-            ))}
-          </div>
-          <div className="mock-lines"><b>TOTAL AMOUNT</b><span /><span /><span className="short" /></div>
-        </div>
-      </div>
-    )
-  if (kind === 'tracker')
-    return (
-      <div className="media tracker" aria-hidden="true">
-        {[['Customer A', 'Overdue', 'red'], ['Customer B', 'Due in 3 days', 'amber'], ['Customer C', 'Paid', 'green']].map(([n, s, c]) => (
-          <div key={n} className="row"><span>{n}</span><em className={c}>{s}</em></div>
-        ))}
-      </div>
-    )
-  if (kind === 'studio')
-    return (
-      <div className="media studio" aria-hidden="true">
-        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((d, i) => (
-          <div key={d} className="day">
-            <small>{d}</small>
-            <span className={i === 2 ? 'clash' : ''} style={{ height: `${[46, 70, 58, 34, 64][i]}%` }} />
-          </div>
-        ))}
-      </div>
-    )
-  return null
+  const s = shots[kind]
+  if (!s) return null
+  return (
+    <a className="media" href={s[0]} target="_blank" rel="noreferrer" aria-label={`Open screenshot: ${s[1]}`}>
+      <img src={s[0]} alt={s[1]} loading="lazy" width="1280" height="800" />
+    </a>
+  )
 }
 
 export default function App() {
