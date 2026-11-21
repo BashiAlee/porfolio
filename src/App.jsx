@@ -22,7 +22,7 @@ const fade = {
 }
 
 const shots = {
-  phones: ['/media/shot-apex.jpg', 'Apex Mobile Store homepage', 'apex-mobile-store'],
+  phones: ['/media/shot-apex.jpg', 'Apex Mobile Store product page with storage and colour options', 'apex-mobile-store'],
   stockbill: ['/media/shot-billing.jpg', 'Universal Billing System products and stock screen, with demo data', 'universal-billing'],
   tracker: ['/media/shot-tracker.jpg', 'Installment Tracker dashboard, with demo data', 'installment-tracker'],
   studio: ['/media/shot-studio.jpg', 'Studio Manager dashboard, with demo data', 'studio-manager'],

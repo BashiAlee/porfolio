@@ -102,7 +102,7 @@ export const current = [
     kind: 'phones',
     blurb:
       'Headless online store for a phone shop. WooCommerce is the source of truth and a Next.js 16 + TypeScript storefront sits on top.',
-    points: ['123 real products live in the catalogue, with photos and product videos', 'Grouped accessories menu, search, guest checkout with Cash on Delivery', 'Checked at desktop, tablet and phone widths after every change'],
+    points: ['120+ real products in the catalogue, with photos, videos and storage and colour variations', 'Grouped accessories menu, search, compare, guest checkout with Cash on Delivery', 'Delivery, warranty, payment, FAQ, privacy and terms pages written and wired in', 'Checked at desktop, tablet and phone widths after every change'],
     tags: ['Next.js 16', 'TypeScript', 'WooCommerce', 'WordPress', 'CSS Modules'],
   },
   {
@@ -111,7 +111,7 @@ export const current = [
     kind: 'stockbill',
     blurb:
       'Offline desktop billing for small shops, shipped as a Windows installer. Each shop sets its own name and logo.',
-    points: ['Stock, QR and barcode labels, billing by scanner, IMEI tracking', 'Per-item discounts, returns, suppliers, day book and reports', 'PDF and CSV export, one-click backup and restore, licensing'],
+    points: ['Stock, QR and barcode labels, billing by scanner, IMEI tracking', 'Per-item discounts, returns, suppliers, day book and reports', 'Supplier price changes and purchase deletion that keep past bills and ledgers correct', 'PDF and CSV export, backup and restore, licensing; 172 unit and 29 end-to-end tests'],
     tags: ['Electron', 'React', 'TypeScript', 'SQLite', 'Vitest', 'Playwright'],
   },
   {
