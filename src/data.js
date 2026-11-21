@@ -120,7 +120,7 @@ export const current = [
     kind: 'tracker',
     blurb:
       'Tracks customers buying phones on installments: who owes what, when it is due and who is behind.',
-    points: ['Custom schedules, partial payments and a plan calculator', 'Owner and staff logins, cash ledger, PDF statements and overdue sheets', 'One-click WhatsApp reminders that you review before sending'],
+    points: ['Dashboard with cash in hand, total balance, today\'s recoveries and overdue installments', 'Custom schedules, partial payments, a receive-installment screen and a plan calculator', 'Reports, expenses, suppliers, cash ledger, shops and staff logins', 'PDF statements, overdue sheets and WhatsApp reminders you review before sending'],
     tags: ['Node.js', 'Express', 'SQLite', 'PDFKit'],
   },
   {
