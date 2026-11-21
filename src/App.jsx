@@ -125,13 +125,13 @@ export default function App() {
           </div>
 
           <motion.p className="comment sub" {...fade}>// earlier work</motion.p>
-          <div className="rows">
-            {earlier.map((p) => (
-              <motion.div key={p.title} className="rowline" {...fade}>
+          <div className="boxes">
+            {earlier.map((p, i) => (
+              <motion.article key={p.title} className="box" {...fade} transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}>
                 <span className="area">{p.area}</span>
-                <strong>{p.title}</strong>
+                <h3>{p.title}</h3>
                 <p>{p.blurb}</p>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </Section>
